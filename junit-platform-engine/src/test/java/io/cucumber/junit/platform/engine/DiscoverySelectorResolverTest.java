@@ -90,8 +90,8 @@ class DiscoverySelectorResolverTest {
 
     @Test
     void resolveRequestWithClasspathRootSelector() {
-        Path classPathRoot = Paths.get("src/test/resources/");
-        DiscoverySelector resource = selectClasspathRoots(singleton(classPathRoot)).get(0);
+        Path classpathRoot = Paths.get("src/test/resources/");
+        DiscoverySelector resource = selectClasspathRoots(singleton(classpathRoot)).get(0);
         EngineDiscoveryRequest discoveryRequest = new SelectorRequest(resource);
         resolver.resolveSelectors(discoveryRequest, testDescriptor);
         assertEquals(4, testDescriptor.getChildren().size());
